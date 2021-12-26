@@ -10,6 +10,9 @@ public class FibonacciHeap
     private HeapNode first;
     private int size;
     private int trees;
+
+
+
     private int numMark;
     static int linksCounter;
     static int cutsCounter;
@@ -17,6 +20,23 @@ public class FibonacciHeap
     FibonacciHeap() {
         minNode = null;
         first = null;
+    }
+
+    /**
+     * public HeapNode getFirst()
+     *
+     * Returns the first node in heap, and null if heap is empty
+     */
+    public HeapNode getFirst() {
+        return first;
+    }
+
+    public int getTrees() {
+        return trees;
+    }
+
+    public int getNumMark() {
+        return numMark;
     }
 
     /**
@@ -272,10 +292,15 @@ public class FibonacciHeap
         if (heap2.isEmpty()){
             return;
         }
-    	first.getPrev().setNext(heap2.first);
-        first.setPrev(heap2.first.getPrev());
+        HeapNode oldLast = first.getPrev();
+        HeapNode newLast = heap2.first.getPrev();
+    	oldLast.setNext(heap2.first);
+        first.setPrev(newLast);
+        newLast.setNext(first);
+        heap2.first.setPrev(oldLast);
         size += heap2.size;
         trees += heap2.trees;
+        numMark += heap2.numMark;
         if (heap2.minNode.getKey() < minNode.getKey()) {
             minNode = heap2.minNode;
         }
