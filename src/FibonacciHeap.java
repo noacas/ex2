@@ -10,9 +10,6 @@ public class FibonacciHeap
     private HeapNode first;
     private int size;
     private int trees;
-
-
-
     private int numMark;
     static int linksCounter;
     static int cutsCounter;
@@ -48,23 +45,6 @@ public class FibonacciHeap
      * return number of marked nodes in heap
      * Complexity O(1)
      */
-    public int getNumMark() {
-        return numMark;
-    }
-
-    /**
-     * public HeapNode getFirst()
-     *
-     * Returns the first node in heap, and null if heap is empty
-     */
-    public HeapNode getFirst() {
-        return first;
-    }
-
-    public int getTrees() {
-        return trees;
-    }
-
     public int getNumMark() {
         return numMark;
     }
