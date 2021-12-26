@@ -53,6 +53,23 @@ public class FibonacciHeap
     }
 
     /**
+     * public HeapNode getFirst()
+     *
+     * Returns the first node in heap, and null if heap is empty
+     */
+    public HeapNode getFirst() {
+        return first;
+    }
+
+    public int getTrees() {
+        return trees;
+    }
+
+    public int getNumMark() {
+        return numMark;
+    }
+
+    /**
     * public boolean isEmpty()
     *
     * Returns true if and only if the heap is empty.
