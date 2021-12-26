@@ -26,15 +26,28 @@ public class FibonacciHeap
      * public HeapNode getFirst()
      *
      * Returns the first node in heap, and null if heap is empty
+     * Complexity O(1)
      */
     public HeapNode getFirst() {
         return first;
     }
 
+    /**
+     * public int getTrees()
+     *
+     * return number of trees in heap
+     * Complexity O(1)
+     */
     public int getTrees() {
         return trees;
     }
 
+    /**
+     * public int getNumMark()
+     *
+     * return number of marked nodes in heap
+     * Complexity O(1)
+     */
     public int getNumMark() {
         return numMark;
     }
