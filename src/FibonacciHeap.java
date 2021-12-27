@@ -299,7 +299,7 @@ public class FibonacciHeap
     */
     public void meld(FibonacciHeap heap2)
     {
-        if (heap2.isEmpty()){
+        if ((heap2 == null) || (heap2.isEmpty())){
             return;
         }
         HeapNode oldLast = first.getPrev();
@@ -339,9 +339,16 @@ public class FibonacciHeap
         if (isEmpty()) {
             return new int[0];
         }
-        int maxOrder = first.getPrev().getRank();
-        int[] arr = new int[maxOrder + 1];
+        int maxOrder = 0;
         HeapNode cur = first;
+        for (int i=0; i<trees; i++) {
+            if (cur.getRank() > maxOrder){
+                maxOrder = cur.getRank();
+                cur = cur.getNext();
+            }
+        }
+        int[] arr = new int[maxOrder + 1];
+        cur = first;
         do {
             int rank = cur.getRank();
             arr[rank]++;
