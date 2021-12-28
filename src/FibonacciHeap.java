@@ -344,8 +344,8 @@ public class FibonacciHeap
         for (int i=0; i<trees; i++) {
             if (cur.getRank() > maxOrder){
                 maxOrder = cur.getRank();
-                cur = cur.getNext();
             }
+            cur = cur.getNext();
         }
         int[] arr = new int[maxOrder + 1];
         cur = first;
