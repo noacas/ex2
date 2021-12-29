@@ -17,10 +17,10 @@ public class question1 {
             int cutsBefore = f.cutsCounter;
             //start
             long startTime = System.currentTimeMillis();
-            FibonacciHeap.HeapNode toDec6 = null; //1.6
+            //FibonacciHeap.HeapNode toDec6 = null; //1.6
             for (int k = m-1; k>=-1; k--) {
                 FibonacciHeap.HeapNode ele = f.insert(k);
-                /**1.6*/
+                /**1.6*
                 if (k == m-2) {
                     toDec6 = ele;
                 }
@@ -31,14 +31,14 @@ public class question1 {
                 }
             }
             f.deleteMin();
-            //HeapPrinter.print(f, false);
+            HeapPrinter.print(f, false);
             for (int t=j; t>=1; t--) {
-               // System.out.print(toDec[t].getKey()+", ");
-                f.decreaseKey(toDec[t], m+1);
+               System.out.print(toDec[t].getKey()+", ");
+               f.decreaseKey(toDec[t], m+1);
             }
-            HeapPrinter.print(f, true);
-            f.decreaseKey(toDec6, m+1); //1.6
-            //System.out.println();
+            //HeapPrinter.print(f, true);
+            //f.decreaseKey(toDec6, m+1); //1.6
+            System.out.println();
             HeapPrinter.print(f, false);
             long endTime   = System.currentTimeMillis();
             long totalTime = endTime - startTime;
